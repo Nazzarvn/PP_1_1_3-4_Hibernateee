@@ -1,10 +1,12 @@
 package jm.task.core.jdbc;
 
+import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
 import jm.task.core.jdbc.util.Util;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
@@ -17,7 +19,10 @@ public class Main {
         userService.saveUser("Misha", "Sidorov", (byte) 25);
         userService.saveUser("Ivan", "Golovin", (byte) 19);
 
-        userService.getAllUsers();
+
+
+        List<User> list = userService.getAllUsers();
+        list.forEach(System.out::println);
 
         userService.cleanUsersTable();
         userService.dropUsersTable();

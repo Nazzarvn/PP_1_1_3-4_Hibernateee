@@ -5,7 +5,7 @@ import jm.task.core.jdbc.model.User;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface UserDao {
+public interface UserDao  {
     void createUsersTable() throws SQLException;
 
     void dropUsersTable() throws SQLException;
